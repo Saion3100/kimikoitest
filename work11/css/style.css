@@ -1,0 +1,310 @@
+@charset "UTF-8";
+
+html {
+    overflow: auto;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#startBtn {
+    font-family: "Zen Kurenaido", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-top: 300px;
+}
+
+#screen {
+    position: relative;
+    width: 900px;
+    height: 675px;
+    margin: 20px auto;
+    background-color: #000;
+    overflow: hidden;
+
+    background: repeating-linear-gradient(45deg,
+            #ffe6f0,
+            #ffe6f0 10px,
+            #fff 10px,
+            #fff 20px);
+    border: 4px solid pink;
+    border-radius: 25px;
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+}
+
+#nameInputScreen {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    /* ← 背景(1)より高ければOK */
+}
+
+#nameInputScreen input,
+#nameInputScreen button {
+    font-family: "Zen Kurenaido", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#textbox {
+    width: 800px;
+    height: 140px;
+    font-weight: 600;
+    margin: -10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#namebox {
+    font-weight: 900;
+    font-size: 1.6rem;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#text {
+    color: #000;
+    font-size: 1.4rem;
+    white-space: pre-wrap;
+    /* 改行をそのまま表示 */
+}
+
+#bgimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.itembox {
+    position: absolute;
+    width: 580px;
+    height: 420px;
+    top: 30px;
+    left: 160px;
+    text-align: center;
+    z-index: 2;
+}
+
+.charaposition {
+    position: absolute;
+    width: 300px;
+    height: 675px;
+    top: 0;
+    text-align: center;
+    overflow: hidden;
+    z-index: 2;
+    /* background-color: #555; */
+    /*後で消す*/
+    /* opacity: .5; */
+    /*後で消す*/
+}
+
+#charaposition1 {
+    /*一人、三人表示*/
+    left: 300px;
+}
+
+#charaposition2 {
+    /*二人表示*/
+    left: 140px;
+}
+
+#charaposition3 {
+    /*二人表示*/
+    left: 460px;
+}
+
+#charaposition4 {
+    /*三人表示*/
+    left: 0;
+}
+
+#charaposition5 {
+    /*三人表示*/
+    left: 600px;
+}
+
+#messbox {
+    position: absolute;
+    opacity: 0.8;
+    width: 850px;
+    height: 160px;
+    top: 460px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    background-color: #fff;
+    border: double 10px #000;
+    z-index: 3;
+}
+
+
+
+.selectBox {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    display: none;
+}
+
+.select {
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #000;
+    border: solid 5px #fff;
+    border-radius: 20px 50px;
+    box-shadow: inset -2px -2px 4px 4px rgba(0, 0, 0, .5), 2px 2px 4px 4px rgba(0, 0, 0, .5);
+}
+
+#select1 {
+    top: 50px;
+}
+
+#select2 {
+    top: 200px;
+}
+
+#select3 {
+    top: 350px;
+}
+
+.selectText {
+    margin: 15px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.show {
+    display: block;
+    z-index: 10;
+}
+
+.none {
+    display: none;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.fadein {
+    animation-name: fadein;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.fadeout {
+    animation-name: fadeout;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+}
+
+@keyframes fadeoutin {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+.fadeout-fast {
+    animation-name: fadeout;
+    animation-fill-mode: forwards;
+    animation-duration: .1s;
+    animation-timing-function: ease;
+}
+
+.fadeoutin {
+    animation-name: fadeoutin;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+}
+
+#ending-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s ease;
+}
+
+#ending-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ending-overlay.show {
+    opacity: 1;
+}
