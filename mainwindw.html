@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/sinario/sinario.js"></script>
+    <script src="js/main.js"></script>
+    <title>♡君とつくる恋のかたち♡</title>
+</head>
+
+<body style="background:url(img/bg00.jpg) ;size: cover;">
+    <div id="screen">
+
+        <!-- 初期画面背景 -->
+        <img src="img/bg0.jpg" id="bgimg" alt="">
+        <div id="ending-overlay"></div>
+
+        <!-- スタートメニュー -->
+        <div id="menu">
+            <button id="startBtn">スタート</button>
+        </div>
+
+        <!-- 名前入力画面 -->
+        <div id="nameInputScreen" class="none" style="text-align:center; margin-top: 200px;">
+            <label for="playerName">主人公の名前を入力してください</label><br>
+            <input type="text" id="playerName" maxlength="10" style="font-size:1.2em; padding:5px;">
+            <br><br>
+            <button id="nameConfirmBtn" style="font-size:1.2em; padding: 10px 20px; cursor:pointer;">決定</button>
+        </div>
+
+        <!-- 選択肢-->
+        <div class="selectBox">
+            <div class="select" id="select1">
+                <p class="selectText" id="selectText1"></p>
+            </div>
+            <div class="select" id="select2">
+                <p class="selectText" id="selectText2"></p>
+            </div>
+            <div class="select" id="select3">
+                <p class="selectText" id="selectText3"></p>
+            </div>
+        </div>
+
+        <!-- キャラ表示エリア -->
+        <div class="charabox">
+            <div class="itembox"><img src="" alt="" id="item"></div>
+            <div class="charaposition" id="charaposition1"><img src="" alt="" id="chara1"></div><!--一人、三人表示-->
+            <div class="charaposition" id="charaposition2"><img src="" alt="" id="chara2"></div><!--二人表示-->
+            <div class="charaposition" id="charaposition3"><img src="" alt="" id="chara3"></div><!--二人表示-->
+            <div class="charaposition" id="charaposition4"><img src="" alt="" id="chara4"></div><!--三人表示-->
+            <div class="charaposition" id="charaposition5"><img src="" alt="" id="chara5"></div><!--三人表示-->
+        </div>
+
+        <!-- メッセージボックス -->
+        <div id="messbox" class="none">
+            <div id="namebox"><span id="charaname"></span></div>
+            <div id="textbox" class="none">
+                <p id="text"></p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
