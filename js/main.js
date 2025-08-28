@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
 
     //スタートボタン押したとき
     startBtn.addEventListener('click', function () {
-        console.log("gamestart_call");
+        //console.log("gamestart_call");
         // 好感度をリセット（ゲーム再スタート時）
         adoLove = 0;
         kamiLove = 0;
@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
 
     //主人公名前入力
     nameConfirmBtn.addEventListener('click', function () {
-        console.log("nameconfirmbtn_call");
+        //console.log("nameconfirmbtn_call");
         const inputName = playerNameInput.value.trim();
         if (inputName.length === 0) {
             alert('名前を入力してください');
@@ -72,7 +72,7 @@ window.addEventListener('load', function () {
             return;
         }
         playerName = inputName;//名前保存
-        console.log("主人公名前：", playerName);
+        //console.log("主人公名前：", playerName);
         nameInputScreen.classList.add('none');//入力画面非表示
         messbox.classList.remove('none');
         textbox.classList.remove('none');
@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
 
     //main処理
     function main() {
-        console.log("main_call");
+        //console.log("main_call");
 
         if (end_flg) return;
         if (mainLoopPending) return;
@@ -193,9 +193,9 @@ window.addEventListener('load', function () {
 
     //タグ処理
     function processTag(tag) {
-        console.log("tag_call");
+        //console.log("tag_call");
         const tagget_str = tag.split(/\s/);
-        console.log('タグ検出:', tagget_str);
+        //console.log('タグ検出:', tagget_str);
         switch (tagget_str[0]) {
             case 'stop':
                 stop_flg = true;
@@ -376,23 +376,21 @@ window.addEventListener('load', function () {
                 adjustLove(target, amount);
                 break;
             case 'checkEnd':
-                console.log("checkEnd_call", adoLove, kamiLove);
+                //console.log("checkEnd_call", adoLove, kamiLove);
                 // 好感度によってエンディングシナリオへジャンプ
                 if (adoLove >= 7 && kamiLove >= 7) {
-                    console.log("ハーレム");
+                    //console.log("ハーレム");
                     scene_cnt = 110;
                 } else if (adoLove >= 10) {
-                    console.log("あど");
+                    //console.log("あど");
                     scene_cnt = 108;
                 } else if (kamiLove >= 10) {
-                    console.log("かみらい");
+                    //console.log("かみらい");
                     scene_cnt = 109;
-                } else if (adoLove < 5 && kamiLove < 5) {
-                    console.log("バット");
-                    scene_cnt = 107;
                 } else {
-                    goEnding(1); // エラーエンド
-                    break;
+                    //if (adoLove < 5 && kamiLove < 5)
+                    //console.log("バット");
+                    scene_cnt = 107;
                 }
                 line_cnt = 0;
                 // 演出がなく普通に次の行をmainで処理する
@@ -448,14 +446,14 @@ window.addEventListener('load', function () {
     function adjustLove(character, amount) {
         if (character === 'ado') {
             adoLove = adoLove + amount;
-            console.log("ado：", adoLove, amount);
+            //console.log("ado：", adoLove, amount);
         } else if (character === 'kami') {
             kamiLove = kamiLove + amount;
-            console.log("kamirai：", kamiLove, amount);
+            //console.log("kamirai：", kamiLove, amount);
         }
         saveLove();
 
-        console.log(`現在の好感度 - あど: ${adoLove}, かみらい: ${kamiLove}`);
+        //console.log(`現在の好感度 - あど: ${adoLove}, かみらい: ${kamiLove}`);
     }
 
     function saveLove() {
